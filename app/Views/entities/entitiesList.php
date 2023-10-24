@@ -40,10 +40,11 @@
                                     <td scope="col"><?php echo $entidad['id_usuario'] ?></td>
                                     <td scope="col">
                                         <a href="<?php echo base_url('/modificarEntidad/') ?><?php echo $entidad['id_entidad']; ?>" class="btn btn-warning float-right">Modificar</a>
-                                        <form method="post" style="display: inline;">
-                                            <input type="hidden" name="idEliminar" value="<?php echo $entidad['id_entidad'] ?>">
-                                            <a href="<?php echo base_url('unaurl') ?>" class="btn btn-danger float-right" data-id="<?php echo $entidad['id_entidad']; ?>">Eliminar</a>
+                                        <form method="post" action="<?php echo base_url('/eliminarEntidad/') ?><?php echo $entidad['id_entidad']; ?>" style="display: inline;">
+                                            <input type="hidden" name="_method" value="DELETE"> <!-- Esto simula una solicitud DELETE -->
+                                            <button type="submit" class="btn btn-danger float-right">Eliminar</button>
                                         </form>
+
                                     </td>
                                 </tr>
 

@@ -36,9 +36,9 @@
                     </div>
                     <div class="col-md-4">
                         <label for="validationDefault04" class="form-label">Representante</label>
-                        <select class="form-select" id="validationDefault04" required>
+                        <select class="form-select" id="validationDefault04" name="id_usuario" required>
                             <option selected disabled value="">Choose...</option>
-                            <option name="id_usuario" value="8">8</option>
+                            <option value="8">8</option>
                         </select>
                     </div>
                     <div class="col-12">

@@ -24,7 +24,7 @@ class EntidadController extends BaseController
         return view('entities/form_entities');
     }
 
-    public function modificarEntidad($id = null): string
+    public function modificarEntidad($id = null)
     {
 
         $entidad = new EntidadesModel();
@@ -44,14 +44,27 @@ class EntidadController extends BaseController
             // echo var_dump($datos);
             // die;
             $entidad->update($_POST['id'], $datos);
+            return redirect()->to('/listaEntidades');
         }
         return view('entities/form_modificar_entidad', $data);
+    }
+
+    public function eliminarEntidad($id = null)
+    {
+        $entidad = new EntidadesModel();
+        if ($eliminar = $entidad->delete($id)) {
+            echo "EXITO AL ELIMINAR EL USUARIO" . $id;
+            return redirect()->to('/listaEntidades');
+            // echo var_dump($eliminar);
+            // die;
+        }
+        return redirect()->to('/listaEntidades');
     }
 
     public function entidadesList()
     {
         $entidad = new EntidadesModel();
         $data['entidades'] = $entidad->findAll();
-        return view('tables/entitiesList', $data);
+        return view('entities/entitiesList', $data);
     }
 }
