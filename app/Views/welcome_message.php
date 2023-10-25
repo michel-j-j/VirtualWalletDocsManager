@@ -194,10 +194,9 @@
     </style>
 </head>
 <body>
-
+<h1><?php echo $_SESSION['email'] ?> </h1>
 <!-- HEADER: MENU + HEROE SECTION -->
 <header>
-
     <div class="menu">
         <ul>
             <li class="logo">
