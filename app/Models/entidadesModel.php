@@ -10,5 +10,5 @@ class EntidadesModel extends Model
     protected $primaryKey = 'id_entidad';
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
-    protected $allowedFields = ['nombre', 'localidad', 'direccion', 'telefono', 'email', 'id_encargado'];
+    protected $allowedFields = ['nombre', 'localidad', 'direccion', 'telefono', 'email', 'id_usuario'];
 }

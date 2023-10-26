@@ -28,8 +28,11 @@
         <link href="<?= base_url('/assets/vendor/remixicon/remixicon.css') ?>" rel="stylesheet">
         <link href="<?= base_url('/assets/vendor/simple-datatables/style.css') ?>" rel="stylesheet">
 
+
         <link href="<?= base_url('/assets/css/style.css') ?>" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <?= $this->renderSection('title') ?>
     </head>
@@ -522,9 +525,12 @@
         <script src="<?= base_url('/assets/vendor/simple-datatables/simple-datatables.js') ?>"></script>
         <script src="<?= base_url('/assets/vendor/tinymce/tinymce.min.js') ?>"></script>
         <script src="<?= base_url('/assets/vendor/php-email-form/validate.js') ?>"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="<?= base_url('/assets/js/entities.js') ?>"></script>
 
         <!-- Template Main JS File -->
-        <script src="assets/js/main.js"></script>
+        <script src="<?= base_url('/assets/js/main.js') ?>"></script>
     </footer><!-- End Footer -->
 
 </body>

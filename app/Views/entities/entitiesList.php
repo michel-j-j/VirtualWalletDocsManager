@@ -6,6 +6,12 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<?php if (session()->getFlashdata('success')) : ?>
+    <div class="alert alert-success">
+        <?= session()->getFlashdata('success') ?>
+    </div>
+<?php endif; ?>
+
 
 <main id="main" class="main">
     <section class="section">
@@ -13,7 +19,7 @@
             <div class="col-lg-12">
                 <div class="card-body">
                     <h5 class="card-title">Listado de Entidades</h5>
-                    <div style="text-align: right;">Nueva entidad</div>
+                    <div style="text-align: right;"><a href="<?php echo base_url('nuevaEntidad') ?>" class="btn btn-primary float-right">Nueva Entidad</a></div>
                     <!-- Table with hoverable rows -->
                     <table class="table table-hover">
                         <thead>
@@ -40,8 +46,8 @@
                                     <td scope="col"><?php echo $entidad['id_usuario'] ?></td>
                                     <td scope="col">
                                         <a href="<?php echo base_url('/modificarEntidad/') ?><?php echo $entidad['id_entidad']; ?>" class="btn btn-warning float-right">Modificar</a>
-                                        <form method="post" action="<?php echo base_url('/eliminarEntidad/') ?><?php echo $entidad['id_entidad']; ?>" style="display: inline;">
-                                            <input type="hidden" name="_method" value="DELETE"> <!-- Esto simula una solicitud DELETE -->
+                                        <form id="eliminarEntidad" style="display: inline;">
+                                            <input type="hidden" name="eliminar" value="<?php echo $entidad['id_entidad']; ?>">
                                             <button type="submit" class="btn btn-danger float-right">Eliminar</button>
                                         </form>
 

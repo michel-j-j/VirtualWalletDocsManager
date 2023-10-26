@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\EntidadesModel;
+use CodeIgniter\HTTP\ResponseInterface;
 
 class EntidadController extends BaseController
 {
@@ -10,8 +11,10 @@ class EntidadController extends BaseController
     public function formularioEntidad(): string
     {
         $entidad = new EntidadesModel();
+
         if ($_POST) {
             $data = ([
+
                 "nombre" => $_POST['nombre'],
                 "direccion" => $_POST['direccion'],
                 "localidad" => $_POST['localidad'],
@@ -19,6 +22,7 @@ class EntidadController extends BaseController
                 "telefono" => $_POST['telefono'],
                 "id_usuario" => $_POST['id_usuario'],
             ]);
+
             $entidad->insert($data);
         }
         return view('entities/form_entities');
@@ -29,8 +33,7 @@ class EntidadController extends BaseController
 
         $entidad = new EntidadesModel();
         $data['entidad'] = $entidad->find($id);
-        //echo var_dump($_POST);
-        //die;
+
 
         if ($_POST) {
             $datos = ([
@@ -41,24 +44,42 @@ class EntidadController extends BaseController
                 "telefono" => $_POST['telefono'],
                 "id_usuario" => $_POST['id_usuario'],
             ]);
-            // echo var_dump($datos);
-            // die;
+
             $entidad->update($_POST['id'], $datos);
+            // Agrega un mensaje de éxito en una variable de sesión
+            session()->setFlashdata('success', 'Entidad modificada exitosamente');
+            sleep(2);
+
             return redirect()->to('/listaEntidades');
         }
         return view('entities/form_modificar_entidad', $data);
     }
 
-    public function eliminarEntidad($id = null)
+    public function eliminarEntidad(): ResponseInterface
     {
+
+
+
         $entidad = new EntidadesModel();
-        if ($eliminar = $entidad->delete($id)) {
-            echo "EXITO AL ELIMINAR EL USUARIO" . $id;
-            return redirect()->to('/listaEntidades');
-            // echo var_dump($eliminar);
+        if ($entidad->delete($_POST['eliminar'])) {
+            // session()->setFlashdata('eliminado', 'Entidad eliminada exitosamente');
+            // echo var_dump(session('success'));
             // die;
+            //sleep(2);
+            $respuesta = [
+                'exito' => 'ok',
+                'msj' => 'Eliminado Exitoso',
+                'url' => base_url('/listaEntidades'),
+            ];
+            return  $this->response->setJSON($respuesta);
         }
-        return redirect()->to('/listaEntidades');
+        $respuesta = [
+            'exito' => 'noOk',
+            'msj' => 'Error al eliminar',
+            'url' => base_url('/listaEntidades'),
+        ];
+
+        return $this->response->setJSON($respuesta);
     }
 
     public function entidadesList()

@@ -20,4 +20,16 @@ $routes->post('/modificarEntidad/(:num)', 'EntidadController::modificarEntidad/$
 
 //Eliminar entidades
 //$routes->get('/eliminarEntidad/(:num)', 'EntidadController::eliminarEntidad/$1');
-$routes->delete('/eliminarEntidad/(:num)', 'EntidadController::eliminarEntidad/$1');
+$routes->post('/eliminarEntidad', 'EntidadController::eliminarEntidad');
+
+
+//Rutas, usuarios
+
+$routes->get('forms/formUsuarios_admin', 'UserController::formularioUsuario_admin');
+$routes->post('forms/formUsuarios_admin', 'UserController::formularioUsuario_admin');
+
+$routes->get('forms/modificarUsuario/(:num)', 'UserController::modificarUsuario/$1');
+$routes->post('forms/modificarUsuario', 'UserController::modificarUsuario/$1');
+
+$routes->get('tables/listaUsuarios', 'UserController::userList');
+$routes->post('forms/eliminarUsuario/', 'UserController::eliminarUsuario/');

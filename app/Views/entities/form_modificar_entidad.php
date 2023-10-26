@@ -6,14 +6,12 @@
 <?= $this->section('content') ?>
 
 <main id="main" class="main">
-    <? //php echo var_dump($entidad);
-    //die;
-    ?>
+
     <h1>Modificar entidad</h1>
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
-                <form method="post" action="" class="row g-3">
+                <form id="modificarEntidad" method="post" action="" class="row g-3">
                     <div class="col-md-4">
                         <label for="validationDefault01" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="validationDefault01" name="nombre" placeholder="Ingrese el nombre de la entidad" value="<?php echo $entidad['nombre']; ?>" required>
@@ -59,35 +57,6 @@
                     <button class="btn btn-primary" type="submit">Guardar Cambios</button>
 
                 </form>
-            </div>
-        </div>
-    </section>
-    <section>
-        <!-- Agrega este botón para abrir el modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-            Abrir Modal
-        </button>
-
-        <!-- Define el modal -->
-        <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="miModalLabel">Título del Modal</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Contenido del modal -->
-                        <p>Este es el contenido del modal.</p>
-                        <!-- Puedes colocar tu formulario o contenido aquí -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Guardar Cambios</button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
