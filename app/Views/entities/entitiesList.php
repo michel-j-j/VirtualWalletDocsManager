@@ -43,10 +43,10 @@
                                     <td scope="col"><?php echo $entidad['direccion'] ?></td>
                                     <td scope="col"><?php echo $entidad['telefono'] ?></td>
                                     <td scope="col"><?php echo $entidad['email'] ?></td>
-                                    <td scope="col"><?php echo $entidad['id_usuario'] ?></td>
+                                    <td scope="col"><?php echo $entidad['encargado']['nombre'] ?></td>
                                     <td scope="col">
                                         <a href="<?php echo base_url('/modificarEntidad/') ?><?php echo $entidad['id_entidad']; ?>" class="btn btn-warning float-right">Modificar</a>
-                                        <form id="eliminarEntidad" style="display: inline;">
+                                        <form class="eliminarEntidadForm" style="display: inline;">
                                             <input type="hidden" name="eliminar" value="<?php echo $entidad['id_entidad']; ?>">
                                             <button type="submit" class="btn btn-danger float-right">Eliminar</button>
                                         </form>
@@ -64,5 +64,10 @@
         </div>
     </section>
 </main>
+
+<?= $this->endSection() ?>
+<?= $this->section('footer') ?>
+
+<script src="<?= base_url('/assets/js/entities_list.js') ?>"></script>
 
 <?= $this->endSection() ?>

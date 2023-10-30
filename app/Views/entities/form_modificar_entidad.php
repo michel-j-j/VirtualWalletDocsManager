@@ -40,9 +40,10 @@
                     <div class="col-md-4">
                         <label for="id_usuario" class="form-label">Representante</label>
                         <select class="form-select" id="validationDefault04" name="id_usuario" required>
-                            <option value="<?php echo $entidad['id_usuario']; ?>"><?php echo $entidad['id_usuario']; ?></option>
-                            <!-- traer tambien los datos de los usuarios que pueden ser representantes -->
-                            <option value="8"><?php echo 8 ?></option>
+                            <?php foreach ($representantes as $representante) { ?>
+                                <option value="<?php echo $representante['id_usuario']; ?>"><?php echo $representante['nombre']; ?></option>
+                                <!-- traer tambien los datos de los usuarios que pueden ser representantes -->
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="col-12">
@@ -62,4 +63,11 @@
     </section>
 
 </main>
+
+<?= $this->endSection() ?>
+<!-- JS-->
+<?= $this->section('footer') ?>
+
+<script src="<?= base_url('/assets/js/entities_change.js') ?>"></script>
+
 <?= $this->endSection() ?>

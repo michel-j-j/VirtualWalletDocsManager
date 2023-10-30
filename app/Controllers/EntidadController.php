@@ -3,12 +3,13 @@
 namespace App\Controllers;
 
 use App\Models\EntidadesModel;
+use App\Models\UserModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class EntidadController extends BaseController
 {
 
-    public function formularioEntidad(): string
+    public function formularioEntidad()
     {
         $entidad = new EntidadesModel();
 
@@ -23,16 +24,34 @@ class EntidadController extends BaseController
                 "id_usuario" => $_POST['id_usuario'],
             ]);
 
-            $entidad->insert($data);
+            if ($entidad->insert($data)) {
+                $respuesta = [
+                    'exito' => 'ok',
+                    'msj' => 'Nueva Entidad Creada!',
+                    'url' => base_url('/listaEntidades'),
+                ];
+                return  $this->response->setJSON($respuesta);
+            }
+            $respuesta = [
+                'exito' => 'noOk',
+                'msj' => 'No se pudo crear la entidad',
+                'url' => base_url('/listaEntidades'),
+            ];
+            return  $this->response->setJSON($respuesta);
         }
-        return view('entities/form_entities');
+        $usuarios = new UserModel();
+        $data['representantes'] = $usuarios->findAll();
+        return view('entities/form_entities', $data);
     }
 
     public function modificarEntidad($id = null)
     {
 
         $entidad = new EntidadesModel();
-        $data['entidad'] = $entidad->find($id);
+        $data['entidad'] = $entidad->find($id); //recupera los datos de la entidad a modificar
+        //si no hay id o el usuario no existe en BD lo redirige al listado de usuarios.
+        $usuarios = new UserModel();
+        $data['representantes'] = $usuarios->findAll();
 
 
         if ($_POST) {
@@ -84,8 +103,21 @@ class EntidadController extends BaseController
 
     public function entidadesList()
     {
-        $entidad = new EntidadesModel();
-        $data['entidades'] = $entidad->findAll();
+        $entidadModel = new EntidadesModel();
+        $encargadoModel = new UserModel();
+
+        $entidades = $entidadModel->findAll();
+
+        $entidadesConEncargados = [];
+
+        foreach ($entidades as $entidad) {
+            $encargado = $encargadoModel->find($entidad['id_usuario']);
+            $entidad['encargado'] = $encargado;
+            $entidadesConEncargados[] = $entidad;
+        }
+
+        $data['entidades'] = $entidadesConEncargados;
+
         return view('entities/entitiesList', $data);
     }
 }
