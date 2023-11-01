@@ -12,7 +12,7 @@
 	<meta name="description" content="CoreUI - Bootstrap Admin Template">
 	<meta name="author" content="Łukasz Holeczek">
 	<meta name="keyword" content="Bootstrap,Admin,Template,SCSS,HTML,RWD,Dashboard">
-	<title>Login</title>
+	<title>Sistema de recuperacion</title>
 	<link rel="apple-touch-icon" sizes="57x57" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-72x72.png">

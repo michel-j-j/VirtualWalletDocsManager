@@ -56,3 +56,47 @@ in APPPATH\Controllers\LoginController.php on line 31.
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 INFO - 2023-10-25 21:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-10-25 22:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-25 22:52:06 --> unlink(C:\xampp\htdocs\TrabajoFinalProyecto\writable\debugbar/debugbar_1698271881.268133.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 78.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698271881.268133.json): No such file or directory', 'C:\\xampp\\htdocs\\TrabajoFinalProyecto\\system\\Debug\\Toolbar\\Collectors\\History.php', 78)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(78): unlink('C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698271881.268133.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(499): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1698274323.864761', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(476): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(152): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(434): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-25 22:57:07 --> unlink(C:\xampp\htdocs\TrabajoFinalProyecto\writable\debugbar/debugbar_1698271976.984686.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 78.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698271976.984686.json): No such file or directory', 'C:\\xampp\\htdocs\\TrabajoFinalProyecto\\system\\Debug\\Toolbar\\Collectors\\History.php', 78)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(78): unlink('C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698271976.984686.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(499): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1698274625.902801', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(476): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(152): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(434): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-25 22:57:07 --> unlink(C:\xampp\htdocs\TrabajoFinalProyecto\writable\debugbar/debugbar_1698271994.151600.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 78.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698271994.151600.json): No such file or directory', 'C:\\xampp\\htdocs\\TrabajoFinalProyecto\\system\\Debug\\Toolbar\\Collectors\\History.php', 78)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(78): unlink('C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698271994.151600.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(499): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1698274623.804454', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(476): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(152): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(434): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-25 22:57:12 --> unlink(C:\xampp\htdocs\TrabajoFinalProyecto\writable\debugbar/debugbar_1698272012.718138.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 78.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698272012.718138.json): No such file or directory', 'C:\\xampp\\htdocs\\TrabajoFinalProyecto\\system\\Debug\\Toolbar\\Collectors\\History.php', 78)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(78): unlink('C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698272012.718138.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(499): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1698274629.421032', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(476): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(152): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(434): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

@@ -15,8 +15,8 @@ class UserModel extends Model
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
-        'nombre', 'apellido', 'email', 'contraseña', 'dni',
-        'fecha_nacimiento', 'localidad', 'direccion', 'nacionalidad', 'id_rol'
+       'nombre', 'apellido', 'email', 'contraseña', 'dni',
+        'fecha_nacimiento', 'localidad', 'direccion', 'nacionalidad', 'id_usuario', 'id_rol'
     ];
 
     protected $useTimestamps = false;
