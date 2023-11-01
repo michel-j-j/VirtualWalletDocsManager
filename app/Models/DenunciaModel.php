@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class DenunciaModel extends Model
 {
-    protected $table      = 'usuario';
+    protected $table      = 'documentacion';
     protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
 
-    protected $returnType     = 'array'; // cambiar por 'App\Models\UserModel';
-    protected $useSoftDeletes = false;
+    protected $returnType     = 'array';
+    protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nombre', 'apellido', 'email', 'contrasena', 'dni', 'fecha_nacimiento', 'localidad', 'direccion', 'nacionalidad', 'id_rol'];
+    protected $allowedFields = ['id_usuario', 'id_estado_denuncia'];
 
     // Dates
     protected $useTimestamps = false;

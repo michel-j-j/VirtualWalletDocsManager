@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class EstadoDocumentacionModel extends Model
 {
-    protected $table      = 'usuario';
-    protected $primaryKey = 'id';
+    protected $table      = 'estado_documentacion';
+    protected $primaryKey = 'id_estado_documentacion';
 
     protected $useAutoIncrement = true;
 
-    protected $returnType     = 'array'; // cambiar por 'App\Models\UserModel';
-    protected $useSoftDeletes = false;
+    protected $returnType     = 'array';
+    protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nombre', 'apellido', 'email', 'contrasena', 'dni', 'fecha_nacimiento', 'localidad', 'direccion', 'nacionalidad', 'id_rol'];
+    protected $allowedFields = ['descripcion'];
 
     // Dates
     protected $useTimestamps = false;

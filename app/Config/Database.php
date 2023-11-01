@@ -28,7 +28,7 @@ class Database extends Config
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => '',
+        'password'     => '1234',
         'database'     => 'perdi_mi_billetera',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
