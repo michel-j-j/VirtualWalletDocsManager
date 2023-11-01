@@ -6,6 +6,7 @@
 <?= $this->section('content') ?>
 <main id="main" class="main">
     <section class="section">
+        <h1>Nueva Entidad</h1>
         <div class="row">
             <div class="col-lg-12">
                 <form method="post" id="crearEntidad" class="row g-3">

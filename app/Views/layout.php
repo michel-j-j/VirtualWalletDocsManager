@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <title>Dashboard - NiceAdmin Bootstrap Template</title>
+        <title>Dashboard - Perdi mi Billetera</title>
 
         <meta content="" name="description">
         <meta content="" name="keywords">
@@ -15,6 +15,7 @@
         <!-- Favicons -->
         <link href="assets/img/favicon.png" rel="icon">
         <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        <link rel="shortcut icon" type="image/ico" href="icons/logo.png">
 
         <!-- Google Fonts -->
         <link href="https://fonts.gstatic.com" rel="preconnect">

@@ -6,6 +6,16 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+
+
+
+
+
+
+
+
+
+
 //Get request ENTIDAD
 $routes->get('/', 'Home::index');
 //Creacion de entidades
@@ -17,12 +27,9 @@ $routes->get('/listaEntidades', 'EntidadController::entidadesList'); //Lista las
 $routes->get('/modificarEntidad/(:num)', 'EntidadController::modificarEntidad/$1'); //Muestra el formulario para editar entidades
 $routes->post('/modificarEntidad/(:num)', 'EntidadController::modificarEntidad/$1'); // Hace el update de una entidad
 
-
 //Eliminar entidades
 //$routes->get('/eliminarEntidad/(:num)', 'EntidadController::eliminarEntidad/$1');
 $routes->post('/eliminarEntidad', 'EntidadController::eliminarEntidad');
-
-
 //Rutas, usuarios
 
 $routes->get('forms/formUsuarios_admin', 'UserController::formularioUsuario_admin');

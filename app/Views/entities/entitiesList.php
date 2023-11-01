@@ -18,8 +18,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card-body">
-                    <h5 class="card-title">Listado de Entidades</h5>
-                    <div style="text-align: right;"><a href="<?php echo base_url('nuevaEntidad') ?>" class="btn btn-primary float-right">Nueva Entidad</a></div>
+                    <h1>Listado de Entidades</h1>
+                    <div style="text-align: right;"><a href="<?php echo base_url('nuevaEntidad') ?>" class="btn btn-primary float-right">Nueva Entidad</a></div><br>
                     <!-- Table with hoverable rows -->
                     <table class="table table-hover">
                         <thead>

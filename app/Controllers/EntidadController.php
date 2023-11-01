@@ -77,8 +77,6 @@ class EntidadController extends BaseController
     public function eliminarEntidad(): ResponseInterface
     {
 
-
-
         $entidad = new EntidadesModel();
         if ($entidad->delete($_POST['eliminar'])) {
             // session()->setFlashdata('eliminado', 'Entidad eliminada exitosamente');
