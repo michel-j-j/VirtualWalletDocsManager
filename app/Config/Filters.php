@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\FilterSession;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -24,6 +25,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'FilterSession'   => FilterSession::class
     ];
 
     /**
@@ -35,6 +37,7 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
+            'FilterSession' => ['except' => ['login','registrar','registrar/registrarse','login/logear','recuperar','recuperar/recuperarse']],
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
