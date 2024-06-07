@@ -96,7 +96,7 @@ class UserModel extends Model
             'fecha_nacimiento' => $this->fecha,
             'telefono' => $this->telefono,
             'contraseña' => $this->contra,
-            'id_rol' => $this->roleUser
+            'id_rol' => UserModel::$roleUser
         ];
         return $datos;
     }

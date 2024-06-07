@@ -63,7 +63,6 @@ class LoginController extends BaseController
     public function registrarse(): ResponseInterface
     {
         $retorno = [
-            'estado' => 'error',
             'msj' => 'Error en el back',
             'url' => base_url('/login')
         ];
@@ -99,7 +98,7 @@ class LoginController extends BaseController
                 throw new Exception('El usuario ya existe');
             }
 
-            if ($userModel->createUser()) {
+            if (!$userModel->createUser()) {
                 throw new Exception('Error al insertar usuario!');
             }
             $retorno['msj'] = 'Usuario registrado con exito!';
