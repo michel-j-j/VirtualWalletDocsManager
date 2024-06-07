@@ -20,7 +20,7 @@ $(document).ready(function () {
                     window.location.href = data.url;
                 })
             },
-            error: function (xhr, status, error) {
+            error: function (xhr, status) {
                 Swal.fire({
                     icon: 'error',
                     title: xhr.responseJSON.messages.error,

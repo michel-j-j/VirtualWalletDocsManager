@@ -30,42 +30,23 @@ class LoginController extends BaseController
 
     public function logear(): ResponseInterface
     {
-        $retorno = [
-            'msj' => 'Email y/o contraseña erróneo.',
-            'url' => base_url('/')
-        ];
-
         try {
-            $userModel = new UserModel();
-            $email = $this->request->getPost('email');
-            $contra = $this->request->getPost('contra');
 
-            $user = $userModel->where('email', $email)->first();
+            // Crear instancia del modelo desde los datos POST
+            $user = UserModel::createFromPostData($this->request->getPost());
 
-            if ($user == null) {
-                throw new UserNotFoundException('El usuario no existe.');
+            if (!$user->userExist()) {
+                return $this->failNotFound('User not found');
             }
 
-            if ($user['contraseña'] != $contra) {
-                throw new InvalidCredentialsException('Contraseña incorrecta.');
+            if (!$user->userPassCorrect()) {
+                return $this->failUnauthorized('Invalid credentials');
             }
 
-            $tipoRol = ($user['id_rol'] == 1) ? 'Administrador' : 'Ciudadano';
-            $index = ($user['id_rol'] == 1) ? 'dashboard/admin' : 'dashboard/user';
+            $user->dataSession();
 
-            $retorno['url'] = base_url($index);
-
-            $data = [
-                'id' => $user['id'],
-                'nombre' => $user['nombre'],
-                'apellido' => $user['apellido'],
-                'tipo_rol' => $tipoRol,
-                'rol' => $user['id_rol'],
-                'index' => $index
-            ];
-            session()->set($data);
-
-            $retorno['msj'] = 'El usuario se logeó con éxito!';
+            $retorno['url'] = base_url($user->urlDir());
+            $retorno['msj'] = 'User successfully logged in';
 
             return $this->respondUpdated($retorno);
 
@@ -74,7 +55,7 @@ class LoginController extends BaseController
         } catch (InvalidCredentialsException $e) {
             return $this->failUnauthorized($e->getMessage());
         } catch (Exception $e) {
-            $retorno['msj'] = 'Error en el servidor.';
+            $retorno['msj'] = 'Server error';
             return $this->failServerError($retorno['msj']);
         }
     }
@@ -88,7 +69,6 @@ class LoginController extends BaseController
         ];
 
         try {
-            $userModel = new UserModel();
             $nombre = $_POST['nombre'];
             $direccion = $_POST['direccion'];
             $localidad = $_POST['localidad'];
@@ -101,27 +81,25 @@ class LoginController extends BaseController
             $contra = $_POST['contra'];
             $fecha = $_POST['fecha_nacimiento'];
 
-            $datos = [
+            $userModel = new UserModel(
+                $nombre,
+                $direccion,
+                $localidad,
+                $nacionalidad,
+                $sobre,
+                $apellido,
+                $email,
+                $telefono,
+                $dni,
+                $contra,
+                $fecha
+            );
 
-                'nombre' => $nombre,
-                'apellido' => $apellido,
-                'direccion' => $direccion,
-                'localidad' => $localidad,
-                'nacionalidad' => $nacionalidad,
-                'sobre_mi' => $sobre,
-                'email' => $email,
-                'dni' => $dni,
-                'fecha_nacimiento' => $fecha,
-                'telefono' => $telefono,
-                'contraseña' => $contra,
-                'id_rol' => 2
-            ];
-
-            if ($userModel->where('email', $email)->first()) {
+            if ($userModel->userExist()) {
                 throw new Exception('El usuario ya existe');
             }
 
-            if (!$userModel->insert($datos)) {
+            if ($userModel->createUser()) {
                 throw new Exception('Error al insertar usuario!');
             }
             $retorno['msj'] = 'Usuario registrado con exito!';
