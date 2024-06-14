@@ -1,8 +1,8 @@
 # Virtual Wallet Documentation Manager
 
-Este repositorio contiene un sistema profesional de gestión de documentación para una billetera virtual. La plataforma ofrece capacidades de CRUD (Crear, Leer, Actualizar, Eliminar) para usuarios, documentos y roles, lo que permite una gestión eficiente y segura de la información.
+This repository contains a professional documentation management system for a virtual wallet. The platform offers CRUD (Create, Read, Update, Delete) capabilities for users, documents, and roles, enabling efficient and secure information management.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
 - HTML
 - CSS
@@ -11,30 +11,30 @@ Este repositorio contiene un sistema profesional de gestión de documentación p
 - PHP
 - CodeIgniter
 
-## Características Principales
+## Main Features
 
-- Gestión de usuarios con diferentes roles (administrador, usuario estándar, etc.).
-- Funcionalidades completas CRUD para documentos, lo que permite la fácil carga, visualización, edición y eliminación de los mismos.
-- Interfaz de usuario intuitiva y atractiva, desarrollada con HTML, CSS y JavaScript.
-- Backend sólido y seguro construido sobre PHP y CodeIgniter, garantizando un manejo confiable de datos y usuarios.
+- User management with different roles (admin, standard user, etc.).
+- Full CRUD functionalities for documents, allowing easy uploading, viewing, editing, and deleting.
+- Intuitive and attractive user interface developed with HTML, CSS, and JavaScript.
+- Solid and secure backend built on PHP and CodeIgniter, ensuring reliable handling of data and users.
 
-## Configuración y Uso
+## Setup and Usage
 
-1. **Requisitos Previos:** Asegúrese de tener instalado un servidor web (como Apache) y PHP en su sistema.
-2. **Clonación del Repositorio:** Clone este repositorio en su servidor local o en el entorno de alojamiento de su elección.
+1. **Prerequisites:** Ensure you have a web server (such as Apache) and PHP installed on your system.
+2. **Clone the Repository:** Clone this repository to your local server or your chosen hosting environment.
    ```
-   git clone https://github.com/tuusuario/VirtualWalletDocsManager.git
+   git clone https://github.com/yourusername/VirtualWalletDocsManager.git
    ```
-3. **Configuración de la Base de Datos:** Importe el archivo SQL proporcionado en la carpeta `database` para configurar la estructura de la base de datos.
-4. **Configuración de CodeIgniter:** Ajuste la configuración de la base de datos en `application/config/database.php` con los detalles de su base de datos.
-5. **Acceso a la Aplicación:** Abra su navegador web y vaya a la URL donde ha alojado la aplicación. Puede ser algo como `http://localhost/VirtualWalletDocsManager`.
+3. **Database Configuration:** Import the provided SQL file in the `database` folder to set up the database structure.
+4. **CodeIgniter Configuration:** Adjust the database configuration in `application/config/database.php` with your database details.
+5. **Access the Application:** Open your web browser and go to the URL where you have hosted the application. It might be something like `http://localhost/VirtualWalletDocsManager`.
 
-¡Disfrute gestionando la documentación de su billetera virtual de manera eficiente y profesional con Virtual Wallet Documentation Manager!
+Enjoy managing your virtual wallet documentation efficiently and professionally with the Virtual Wallet Documentation Manager!
 
-## Contribución
+## Contribution
 
-Las contribuciones son bienvenidas. Si desea mejorar este proyecto, simplemente realice un fork y envíe una pull request. ¡Gracias por tu colaboración!
+Contributions are welcome. If you want to improve this project, simply fork it and submit a pull request. Thank you for your collaboration!
 
-## Licencia
+## License
 
-Este proyecto está bajo la Licencia MIT. Consulte el archivo [LICENSE](LICENSE) para obtener más detalles.
+This project is under the MIT License. See the [LICENSE](LICENSE) file for more details.
