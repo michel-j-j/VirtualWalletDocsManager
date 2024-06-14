@@ -141,3 +141,10 @@
 #--------------------------------------------------------------------
 
 # curlrequest.shareOptions = true
+
+# Configuration SMTP
+ SMTP_HOST = 'smtp.gmail.com'
+SMTP_PORT = 587
+SMTP_USER = 'michellejauge@gmail.com'
+SMTP_PASS = 'bbur vrin skja adxk'
+SMTP_CRYPTO = 'tls'

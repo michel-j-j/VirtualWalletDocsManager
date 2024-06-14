@@ -1,12 +1,9 @@
 $(document).ready(function () {
     $('#formularioLogin').submit(function (e) {
         e.preventDefault();
-
         var formData = $(this).serialize();
-        console.log(formData);
-
         $.ajax({
-            url: "login/logear", // URL de ejemplo
+            url: "login/signIn", // URL de ejemplo
             method: "POST",
             headers: { 'X-Requested-With': 'XMLHttpRequest' },
             data: formData,

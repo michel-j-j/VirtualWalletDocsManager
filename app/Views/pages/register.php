@@ -9,10 +9,10 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<meta name="description" content="CoreUI - Bootstrap Admin Template">
+	<meta name="description" content="CoreUI - Bootstrap Admin TemplateF">
 	<meta name="author" content="Łukasz Holeczek">
 	<meta name="keyword" content="Bootstrap,Admin,Template,SCSS,HTML,RWD,Dashboard">
-	<title>Registro de Usuario</title>
+	<title>User Registration</title>
 	<link rel="apple-touch-icon" sizes="57x57"
 		href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60"
@@ -86,9 +86,9 @@
 				<div class="col-md-6">
 					<div class="card mb-4 mx-4">
 						<div class="card-body p-4">
-							<h1>Registro De Usuario</h1>
+							<h1>User Registration</h1>
 							<form id="formularioRegistro">
-								<p class="text-body-secondary">Crear una cuenta</p>
+								<p class="text-body-secondary">Create an account</p>
 								<div class="input-group mb-3">
 									<span class="input-group-text">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -96,24 +96,24 @@
 											<path
 												d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
 										</svg></span>
-									<input class="form-control" type="text" placeholder="Nombre" name="nombre">
+									<input class="form-control" type="text" placeholder="First Name" name="nombre">
 									<span class="input-group-text">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-person icon" viewBox="0 0 16 16">
 											<path
 												d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
 										</svg></span>
-									<input class="form-control" type="text" placeholder="Apellido" name="apellido">
+									<input class="form-control" type="text" placeholder="Last Name" name="apellido">
 								</div>
 								<div class="input-group mb-3">
 									<span class="input-group-text">
 										<i class="bi bi-signpost-split"></i>
 									</span>
-									<input class="form-control" type="text" placeholder="Localidad" name="localidad">
+									<input class="form-control" type="text" placeholder="Location" name="localidad">
 									<span class="input-group-text">
 										<i class="bi bi-signpost-split"></i>
 									</span>
-									<input class="form-control" type="text" placeholder="Direccion" name="direccion">
+									<input class="form-control" type="text" placeholder="Address" name="direccion">
 								</div>
 								<div class="input-group mb-3"><span class="input-group-text">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -127,28 +127,28 @@
 									<span class="input-group-text">
 										<i class="bi bi-airplane-engines"></i>
 									</span>
-									<input class="form-control" type="text" placeholder="Nacionalidad"
+									<input class="form-control" type="text" placeholder="Nationality"
 										name="nacionalidad">
 									<span class="input-group-text">
 										<i class="bi bi-calendar"></i>
 									</span>
-									<input class="form-control" type="date" placeholder="Fecha de Nacimiento"
+									<input class="form-control" type="date" placeholder="Date of Birth"
 										name="fecha_nacimiento">
 								</div>
 								<div class="input-group mb-3"><span class="input-group-text">
 										<i class="bi bi-body-text"></i></span>
-									<textarea class="form-control" type="text" placeholder="Sobre mi"
+									<textarea class="form-control" type="text" placeholder="About me"
 										name="sobre_mi"></textarea>
 								</div>
 								<div class="input-group mb-3">
 									<span class="input-group-text">
 										<i class="bi bi-person-vcard icon"></i>
 									</span>
-									<input class="form-control" type="text" placeholder="Numero de DNI" name="dni">
+									<input class="form-control" type="text" placeholder="ID Number" name="dni">
 								</div>
 								<div class="input-group mb-3"><span class="input-group-text">
 										<i class="bi bi-telephone icon"></i></span>
-									<input class="form-control" type="text" placeholder="Telefono" name="telefono">
+									<input class="form-control" type="text" placeholder="Phone" name="telefono">
 								</div>
 								<div class="input-group mb-3"><span class="input-group-text">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -158,7 +158,7 @@
 											<path
 												d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z" />
 										</svg></span>
-									<input class="form-control" type="password" placeholder="Contraseña" name="contra">
+									<input class="form-control" type="password" placeholder="Password" name="contra">
 									<span class="input-group-text">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-shield-lock icon" viewBox="0 0 16 16">
@@ -167,16 +167,16 @@
 											<path
 												d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z" />
 										</svg></span>
-									<input class="form-control" type="password" placeholder="Repetir Contraseña"
+									<input class="form-control" type="password" placeholder="Repeat Password"
 										name="repetir contra">
 
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<button class="btn btn-block btn-info" onClick="history.go(-1);">Volver</button>
+										<button class="btn btn-block btn-info" onClick="history.go(-1);">Back</button>
 									</div>
 									<div class="col-6 text-end">
-										<button class="btn btn-block btn-success" type="submit">Crear Cuenta</button>
+										<button class="btn btn-block btn-success" type="submit">Create Account</button>
 									</div>
 							</form>
 						</div>

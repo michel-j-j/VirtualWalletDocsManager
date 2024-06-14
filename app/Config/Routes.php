@@ -32,9 +32,9 @@ $routes->post('/eliminarEntidad', 'EntidadController::eliminarEntidad');
 // $routes->get('/pantallaTesting', 'AdminController::index');
 
 $routes->get('/login', 'LoginController::login');
-$routes->post('/login/logear', 'LoginController::logear');
-$routes->get('/registrar', 'LoginController::registrar');
-$routes->post('/registrar/registrarse', 'LoginController::registrarse');
+$routes->post('/login/signIn', 'LoginController::signIn'); //Refactor
+$routes->get('/register', 'LoginController::register');
+$routes->post('/register/signUp', 'LoginController::signUp');
 
 $routes->get('/recuperar', 'LoginController::recuperar');
 $routes->post('/recuperar/recuperarse', 'LoginController::recuperarse');

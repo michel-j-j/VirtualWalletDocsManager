@@ -7,26 +7,13 @@ $(document).ready(function () {
             method: "POST",
             data: formData,
             success: function (data) {
-                console.log(data);
-                if (data.estado == 'ok') {
-                    Swal.fire({
-                        icon: 'success',
-                        title: data.msj,
-                        showConfirmButton: false,
-                        timer: 1500
-                    }).then((result) => {
-                        window.location.href = data.url;
-                    })
-                }
-                else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: data.msj,
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
-
+                Swal.fire({
+                    icon: 'success',
+                    title: data.title,
+                    text: data.msj,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             },
             error: function (xhr, status, error) {
                 Swal.fire({

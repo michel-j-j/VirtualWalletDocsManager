@@ -62,7 +62,7 @@ class ControladorPrincipal extends BaseController
                 'msj' => 'Creacion Exitosa',
                 'url' => base_url('/dashboard/user'),
             ];
-            return  $this->response->setJSON($respuesta);
+            return $this->response->setJSON($respuesta);
         }
         $respuesta = [
             'exito' => 'noOk',

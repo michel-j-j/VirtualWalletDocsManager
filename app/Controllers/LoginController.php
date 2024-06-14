@@ -23,16 +23,15 @@ class LoginController extends BaseController
         return view('pages/recuperar');
     }
 
-    public function registrar(): string
+    public function register(): string
     {
-        return view('pages/registrar');
+        return view('pages/register');
     }
 
-    public function logear(): ResponseInterface
+    public function signIn(): ResponseInterface
     {
         try {
-
-            // Crear instancia del modelo desde los datos POST
+            // Create an instance of the model from the POST data
             $user = UserModel::createFromPostData($this->request->getPost());
 
             if (!$user->userExist()) {
@@ -60,7 +59,7 @@ class LoginController extends BaseController
         }
     }
 
-    public function registrarse(): ResponseInterface
+    public function signUp(): ResponseInterface
     {
         $retorno = [
             'msj' => 'Error en el back',
@@ -112,33 +111,47 @@ class LoginController extends BaseController
 
     public function recuperarse(): ResponseInterface
     {
-        $retorno = [
-            'estado' => 'error',
-            'msj' => 'Error en el back',
-            'url' => base_url('/login')
+        $email = \Config\Services::email();
+
+        // Configuración del correo
+        $config['protocol'] = 'smtp';
+        $config['SMTPHost'] = 'smtp.gmail.com';
+        $config['SMTPPort'] = 587;  // Puedes usar 465 para SSL
+        $config['SMTPUser'] = 'michellejauge@gmail.com';  // Tu dirección de correo completa
+        $config['SMTPPass'] = 'gaww hoze ahoh kztc';  // Tu contraseña de aplicación generada
+        $config['SMTPCrypto'] = 'tls';  // Usa 'ssl' si usas el puerto 465
+        $config['charset'] = 'UTF-8';  // Usa 'UTF-8' para caracteres especiales
+        $config['mailType'] = 'html';  // Puedes cambiar esto a 'text' si prefieres correos de texto plano
+        $config['wordWrap'] = true;
+
+        // Inicializa la configuración del correo
+        $email->initialize($config);
+        $name = "";
+        $new_pass = "";
+        $data['usuario'] = [
+            'name' => $name,
+            'new_pass' => $new_pass,
         ];
+        // Configuración de los detalles del correo
+        $email->setFrom('your_email@gmail.com', 'VirtualWallet');
+        $email->setTo('michellejauge@gmail.com');
+        $email->setSubject('Email Test');
+        $email->setMessage(view('recuperacionEmail/recuperacionEmail', $data));
 
-        try {
-            $mail = new Phpmailer_lib();
-            var_dump($mail);
-            $mail = $mail->load();
 
-            var_dump($mail);
-            $mail->addAddress($_POST['email']);
+        // Enviar el correo y manejar errores
+        if ($email->send()) {
 
-            $mail->Subject = 'Recuperacion de la contraseña.';
-            $mail->Body = '<html>
-        <h1>Contraseña</h1>
-        </html>';
-
-            $retorno['estado'] = 'ok';
-            $retorno['msj'] = 'Email enviado con exito!';
-            $retorno['url'] = base_url('/login');
-
-            return $this->response->setJSON($retorno);
-        } catch (Exception $e) {
-            $retorno['msj'] = $e->getMessage();
-            return $this->response->setJSON($retorno);
+            $retorno['title'] = 'Email enviado con exito!';
+            $retorno['msj'] = 'Verifique su casilla de mensajes.';
+            return $this->respondUpdated($retorno);
         }
+        // Obtener el depurador de errores
+        $error = $email->printDebugger(['headers']);
+        return $this->response->setJSON([
+            'msj' => 'Error al enviar el correo',
+            'error' => $error
+        ]);
+
     }
 }

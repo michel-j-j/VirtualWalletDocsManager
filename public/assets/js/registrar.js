@@ -3,7 +3,7 @@ $(document).ready(function () {
         e.preventDefault();
         var formData = $(this).serialize();
         $.ajax({
-            url: "registrar/registrarse", // URL de ejemplo
+            url: "register/signUp", // URL de ejemplo
             method: "POST",
             data: formData,
             success: function (data) {
