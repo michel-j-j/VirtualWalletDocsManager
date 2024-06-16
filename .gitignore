@@ -2,4 +2,4 @@ app/Config/Database.php
 system/
 writable/
 vendor/
-env
+.env

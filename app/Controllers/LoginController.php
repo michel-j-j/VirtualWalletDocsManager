@@ -115,11 +115,11 @@ class LoginController extends BaseController
 
         // Configuración del correo
         $config['protocol'] = 'smtp';
-        $config['SMTPHost'] = 'smtp.gmail.com';
-        $config['SMTPPort'] = 587;  // Puedes usar 465 para SSL
-        $config['SMTPUser'] = 'michellejauge@gmail.com';  // Tu dirección de correo completa
-        $config['SMTPPass'] = '';  // Tu contraseña de aplicación generada
-        $config['SMTPCrypto'] = 'tls';  // Usa 'ssl' si usas el puerto 465
+        $config['SMTPHost'] = env('SMTP_HOST');
+        $config['SMTPPort'] = env('SMTP_PORT');  // Puedes usar 465 para SSL
+        $config['SMTPUser'] = env('SMTP_USER');  // Tu dirección de correo completa
+        $config['SMTPPass'] = env('SMTP_PASS');  // Tu contraseña de aplicación generada
+        $config['SMTPCrypto'] = env('SMTP_CRYPTO');  // Usa 'ssl' si usas el puerto 465
         $config['charset'] = 'UTF-8';  // Usa 'UTF-8' para caracteres especiales
         $config['mailType'] = 'html';  // Puedes cambiar esto a 'text' si prefieres correos de texto plano
         $config['wordWrap'] = true;

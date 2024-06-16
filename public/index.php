@@ -46,7 +46,7 @@ define('BASEPATH', str_replace("\\", "/", SYSTEMPATH));
 (new CodeIgniter\Config\DotEnv(ROOTPATH))->load();
 
 // Define ENVIRONMENT
-if (! defined('ENVIRONMENT')) {
+if (!defined('ENVIRONMENT')) {
     define('ENVIRONMENT', env('CI_ENVIRONMENT', 'development'));
 }
 
